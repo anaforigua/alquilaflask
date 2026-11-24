@@ -1,0 +1,324 @@
+/* ==========================================================================
+   PALETA FUTURISTA PASTEL RESPONSIVA (FLASK EDITION)
+   Breakpoints: >= 1026px y <= 720px. Sin emojis, amigable con mayores de 60.
+   ========================================================================== */
+
+:root {
+  --pastel-mint: #a7f3d0;
+  --pastel-mint-deep: #047857;
+  --pastel-mint-soft: #ecfdf5;
+
+  --pastel-lavender: #ddd6fe;
+  --pastel-lavender-deep: #6d28d9;
+  --pastel-lavender-soft: #f5f3ff;
+
+  --pastel-cyan: #bae6fd;
+  --pastel-cyan-deep: #0369a1;
+
+  --pastel-rose: #fbcfe8;
+  --pastel-rose-deep: #be185d;
+
+  --futuristic-bg: #f8fafc;
+  --futuristic-surface: #ffffff;
+  --futuristic-surface-glass: rgba(255, 255, 255, 0.92);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+
+  --font-base-size: 19px;
+  --radius-futuristic: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--futuristic-bg);
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(186, 230, 253, 0.35) 0px, transparent 50%),
+    radial-gradient(at 90% 15%, rgba(221, 214, 254, 0.35) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, rgba(167, 243, 208, 0.3) 0px, transparent 55%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-size: var(--font-base-size);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: font-size 0.15s ease;
+}
+
+.neo-container { width: 100%; margin: 0 auto; display: flex; flex-direction: column; }
+
+/* ==========================================================================
+   BREAKPOINTS RESPONSIVOS: >= 1026px y <= 720px
+   ========================================================================== */
+@media (min-width: 1026px) {
+  body { padding: 2.5rem 2rem; }
+  .neo-container { max-width: 1200px; gap: 2.25rem; }
+  .neo-grid-layout { display: grid; grid-template-columns: 7fr 5fr; gap: 2.25rem; align-items: start; }
+  .neo-header { padding: 2rem 2.75rem; }
+  .neo-title { font-size: 2.4rem; }
+  .neo-step-body { padding: 2.5rem; }
+  .neo-receipt-card { padding: 2.5rem; }
+}
+
+@media (min-width: 721px) and (max-width: 1025px) {
+  body { padding: 1.75rem 1.25rem; }
+  .neo-container { max-width: 95%; gap: 1.75rem; }
+  .neo-grid-layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+  .neo-header { padding: 1.75rem 2rem; }
+  .neo-title { font-size: 2rem; }
+  .neo-step-body { padding: 2rem; }
+  .neo-receipt-card { padding: 2rem; }
+}
+
+@media (max-width: 720px) {
+  body { padding: 0.75rem; }
+  .neo-container { width: 100%; gap: 1.25rem; }
+  .neo-grid-layout { display: flex; flex-direction: column; gap: 1.5rem; }
+  .neo-header { padding: 1.25rem; flex-direction: column; align-items: stretch; text-align: center; gap: 1rem; border-radius: 20px; }
+  .neo-brand { flex-direction: column; align-items: center; }
+  .neo-accessibility-bar { width: 100%; justify-content: center; }
+  .neo-title { font-size: 1.75rem; }
+  .neo-step-body { padding: 1.25rem; }
+  .neo-stepper-nav { padding: 0.75rem 0.5rem; gap: 0.35rem; }
+  .neo-step-item { padding: 0.65rem 0.25rem; font-size: 0.85rem; }
+  .neo-counters-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .neo-counter-card { padding: 1rem; }
+  .neo-service-option { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .neo-nav-footer { flex-direction: column; gap: 0.75rem; }
+  .neo-btn-nav { width: 100%; justify-content: center; }
+  .neo-receipt-card { padding: 1.5rem 1.25rem; border-radius: 20px; }
+  .neo-receipt-title { font-size: 2rem; }
+  .neo-table-breakdown td { padding: 0.75rem 0.25rem; font-size: 0.95rem; }
+  .neo-table-breakdown tr.total-highlight td { font-size: 1.25rem; }
+}
+
+/* Header Neo-Futurista */
+.neo-header {
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.95) 0%, rgba(245, 243, 255, 0.95) 50%, rgba(240, 249, 255, 0.95) 100%);
+  backdrop-filter: blur(14px);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(167, 243, 208, 0.35);
+  border-radius: var(--radius-futuristic);
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.25rem;
+}
+.neo-brand { display: flex; align-items: center; gap: 1.25rem; }
+.neo-pill-tag {
+  display: inline-block; background: #ffffff; color: var(--pastel-mint-deep);
+  border: 1px solid var(--pastel-mint); font-size: 0.75rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.85rem;
+  border-radius: 9999px; margin-bottom: 0.25rem;
+}
+.neo-title { font-weight: 900; letter-spacing: -0.02em; color: #0f172a; }
+.neo-subtitle { font-size: 0.95rem; color: var(--text-secondary); }
+
+/* Barra A- y A+ Funcional */
+.neo-accessibility-bar {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.85); padding: 0.4rem;
+  border-radius: 16px; border: 1px solid rgba(203, 213, 225, 0.7);
+}
+.neo-btn-icon {
+  background: #ffffff; border: 2px solid #cbd5e1; color: #1e293b;
+  padding: 0.6rem 1.1rem; border-radius: 12px; font-weight: 900;
+  font-size: 1.05rem; cursor: pointer; min-height: 48px; min-width: 48px;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.neo-btn-icon:hover { border-color: #34d399; background: #ecfdf5; color: #064e3b; transform: translateY(-1px); }
+
+/* Tarjetas y Stepper */
+.neo-card {
+  background: var(--futuristic-surface-glass); backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.9); border-radius: var(--radius-futuristic);
+  box-shadow: 0 15px 35px -10px rgba(148, 163, 184, 0.15); overflow: hidden;
+}
+.neo-stepper-nav {
+  background: linear-gradient(90deg, rgba(236, 253, 245, 0.8) 0%, rgba(245, 243, 255, 0.8) 50%, rgba(240, 249, 255, 0.8) 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8); display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;
+}
+.neo-step-item {
+  border-radius: 16px; background: transparent; border: 2px solid transparent;
+  font-weight: 800; color: var(--text-muted); cursor: pointer; display: flex;
+  align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem 0.5rem;
+  transition: all 0.25s ease;
+}
+.neo-step-item.active {
+  background: #ffffff; border-color: var(--pastel-mint); color: #065f46;
+  box-shadow: 0 4px 14px rgba(167, 243, 208, 0.35);
+}
+.neo-badge-step {
+  width: 28px; height: 28px; border-radius: 50%; background: #e2e8f0;
+  color: #475569; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 900;
+}
+.neo-step-item.active .neo-badge-step {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%); color: #064e3b;
+}
+
+.neo-step-body { display: flex; flex-direction: column; gap: 1.75rem; }
+.neo-step-title { font-weight: 900; color: var(--text-primary); line-height: 1.25; font-size: 1.8rem; }
+.neo-step-desc { font-size: 1rem; color: var(--text-secondary); margin-top: 0.35rem; }
+
+.neo-field-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.neo-field-group label { font-weight: 800; font-size: 1.15rem; color: var(--text-primary); }
+.neo-input-text {
+  width: 100%; padding: 1.15rem 1.35rem; border-radius: 16px; border: 2px solid #cbd5e1;
+  background: #ffffff; font-size: 1.25rem; font-weight: 700; color: var(--text-primary);
+  outline: none; transition: all 0.2s;
+}
+.neo-input-text:focus { border-color: #34d399; box-shadow: 0 0 0 4px rgba(167, 243, 208, 0.4); }
+
+/* Contadores */
+.neo-counters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.25rem; }
+.neo-counter-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0; border-radius: 20px; padding: 1.35rem 1rem;
+  text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+}
+.neo-counter-title { font-weight: 800; font-size: 1.1rem; color: var(--text-primary); }
+.neo-counter-tag {
+  font-size: 0.85rem; font-weight: 800; color: #047857; background: #ecfdf5;
+  padding: 0.2rem 0.65rem; border-radius: 9999px; border: 1px solid #a7f3d0;
+}
+.neo-counter-tag.adic { color: #7c2d12; background: #ffedd5; border-color: #fed7aa; }
+.neo-counter-controls { display: flex; align-items: center; justify-content: center; gap: 0.85rem; }
+.neo-btn-math {
+  width: 54px; height: 54px; border-radius: 16px; border: 2px solid #cbd5e1;
+  background: #ffffff; color: #0f172a; font-size: 1.8rem; font-weight: 900;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+}
+.neo-btn-math:hover { background: #f1f5f9; border-color: #94a3b8; }
+.neo-btn-math.plus { background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%); border-color: #6ee7b7; color: #064e3b; }
+.neo-val-display { font-size: 2.3rem; font-weight: 900; min-width: 54px; text-align: center; font-variant-numeric: tabular-nums; }
+
+/* Servicios */
+.neo-services-list { display: flex; flex-direction: column; gap: 1rem; }
+.neo-service-option {
+  background: #ffffff; border: 2px solid #e2e8f0; border-radius: 20px;
+  padding: 1.25rem 1.5rem; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 1.25rem; transition: all 0.25s; text-align: left;
+}
+.neo-service-option:hover { border-color: #c4b5fd; background: #faf5ff; }
+.neo-service-option.selected {
+  border-color: #34d399; background: linear-gradient(135deg, #f0fdf4 0%, #f5f3ff 100%);
+  box-shadow: 0 0 0 4px rgba(167, 243, 208, 0.4);
+}
+.neo-service-badge {
+  font-size: 0.85rem; font-weight: 800; padding: 0.4rem 0.9rem; border-radius: 9999px;
+  background: #e2e8f0; color: #334155; white-space: nowrap;
+}
+.neo-service-option.selected .neo-service-badge { background: #065f46; color: #ffffff; }
+
+/* Navegación */
+.neo-nav-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid #e2e8f0; }
+.neo-btn-nav {
+  padding: 1rem 1.85rem; border-radius: 16px; font-weight: 800; font-size: 1.15rem;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; min-height: 56px; border: none;
+  transition: all 0.2s;
+}
+.neo-btn-nav.prev { background: #e2e8f0; color: #334155; }
+.neo-btn-nav.prev:hover { background: #cbd5e1; }
+.neo-btn-nav.next {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%); color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(5, 150, 105, 0.4);
+}
+
+/* Recibo Oficial */
+.neo-receipt-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fcfdfe 100%);
+  border: 2px solid rgba(167, 243, 208, 0.6); border-radius: var(--radius-futuristic);
+  box-shadow: 0 20px 40px -15px rgba(167, 243, 208, 0.2);
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.neo-receipt-header { text-align: center; border-bottom: 2px dashed #cbd5e1; padding-bottom: 1.25rem; }
+.neo-tag-official {
+  background: linear-gradient(135deg, #dcfce7 0%, #ede9fe 100%); color: #064e3b;
+  border: 1px solid #86efac; padding: 0.35rem 1rem; border-radius: 9999px;
+  font-size: 0.8rem; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 0.4rem;
+}
+.neo-receipt-title { font-weight: 900; letter-spacing: -0.01em; color: #064e3b; font-size: 2.2rem; }
+.neo-receipt-client-box {
+  background: linear-gradient(135deg, #f0fdf4 0%, #faf5ff 100%);
+  border: 1px solid #e2e8f0; border-radius: 16px; padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.95rem;
+}
+.neo-receipt-client-box div { display: flex; justify-content: space-between; }
+.neo-table-breakdown { width: 100%; border-collapse: collapse; }
+.neo-table-breakdown td { padding: 0.9rem 0.5rem; border-bottom: 1px solid #f1f5f9; }
+.neo-table-breakdown td.amount { text-align: right; font-weight: 800; font-size: 1.15rem; }
+.neo-table-breakdown tr.total-highlight {
+  background: linear-gradient(135deg, #ecfdf5 0%, #ede9fe 100%);
+  border-top: 3px solid #34d399;
+}
+.neo-table-breakdown tr.total-highlight td { padding: 1.35rem 0.75rem; font-weight: 900; color: #064e3b; font-size: 1.45rem; }
+
+.neo-btn-action {
+  width: 100%; padding: 1.1rem; border-radius: 16px; font-weight: 800; font-size: 1.1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+  min-height: 54px; border: none; transition: all 0.2s;
+}
+.neo-btn-action.voice {
+  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  color: #5b21b6; border: 1px solid #c4b5fd;
+}
+.neo-btn-action.print { background: #0f172a; color: #ffffff; }
+
+/* ==========================================================================
+   IMPRESIÓN EXCLUSIVA: SOLO LA FACTURA
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: auto;
+  }
+
+  body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    padding: 0 !important;
+    font-size: 13pt !important;
+  }
+
+  header,
+  .neo-header,
+  .neo-card,
+  .neo-stepper-nav,
+  .neo-step-body,
+  .neo-accessibility-bar,
+  .no-imprimir,
+  .neo-btn-action,
+  .neo-nav-footer,
+  footer {
+    display: none !important;
+  }
+
+  .neo-container,
+  .neo-grid-layout {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #seccionFacturaSena {
+    display: block !important;
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    border-radius: 12px !important;
+    padding: 1.5cm !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    page-break-inside: avoid !important;
+  }
+
+  .neo-receipt-header { border-bottom: 2px solid #000000 !important; }
+  .neo-receipt-client-box { background: #f8fafc !important; border: 1px solid #000000 !important; }
+  .neo-table-breakdown tr.total-highlight { background: #f1f5f9 !important; border-top: 3px solid #000000 !important; }
+  .neo-table-breakdown td { border-bottom: 1px solid #cbd5e1 !important; }
+}
